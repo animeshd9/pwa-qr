@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {withRouter } from "react-router"
-import app from './base.js';
+import {app} from './base.js';
 
 
 function Copyright() {
