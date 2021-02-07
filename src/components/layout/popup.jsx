@@ -41,17 +41,10 @@ export default function AlertDialog() {
               <Typography>{popup.className}</Typography>
             </DialogContent>
             <DialogActions>
-              <Button
-                onClick={handleClose}
-                style={{ backgroundColor: "#aee1e1" }}
-              >
+              <Button onClick={handleClose} color="primary">
                 Disagree
               </Button>
-              <Button
-                onClick={handleClose}
-                autoFocus
-                style={{ backgroundColor: "#aee1e1" }}
-              >
+              <Button onClick={handleClose} color="primary" autoFocus>
                 Agree
               </Button>
             </DialogActions>
