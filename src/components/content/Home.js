@@ -1,7 +1,6 @@
 import React,{ useState } from 'react'
 import QrReader from 'react-qr-scanner'
-import PrimarySearchAppBar from '../layout/appBar'
-
+import AppBar from '../layout/AppBar'
 import { makeStyles } from '@material-ui/core/styles';
 import  Card  from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -54,7 +53,7 @@ export default function Scan (){
     }
     return (
         <div>
-            <PrimarySearchAppBar/>
+            <AppBar/>
             <Card className={classes.root} variant="outlined">
                  <CardContent>
                     <QrReader
