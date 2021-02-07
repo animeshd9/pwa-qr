@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import app from "./base"
+import {app} from "./base"
 import  Spin from '../layout/spinner'
 export const AuthContext = React.createContext()
 
