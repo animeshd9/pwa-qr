@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  appBarRoot: {
+    boxShadow: "0px 0px 0px 0px",
+    backgroundColor: "#1687a7",
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -23,19 +29,30 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBarRoot}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Qr Scanner
-          </Typography>
+          <Grid container alignItems="center">
+            <Grid item>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              >
+                <MenuIcon />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <Typography variant="h6" className={classes.title}>
+                Qr Scanner
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container justify="flex-end">
+            <IconButton>
+              <AccountCircleIcon />
+            </IconButton>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
