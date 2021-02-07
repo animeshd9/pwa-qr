@@ -3,6 +3,9 @@ import QrReader from "react-qr-scanner";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 
+//components
+import Popup from "./popup";
+
 const useStyles = makeStyles({
   root: {
     display: "flex",
@@ -12,12 +15,12 @@ const useStyles = makeStyles({
 
 const Sacnner = () => {
   const classes = useStyles();
-  const [result, setResult] = useState("");
+  const [validate, setValidate] = useState("false");
   const [delay, setDelay] = useState(100);
 
   const handleScan = (data) => {
     if (data) {
-      setResult(data);
+      setValidate(data);
       console.log(data);
     }
   };
@@ -41,7 +44,7 @@ const Sacnner = () => {
         onError={handleError}
         onScan={handleScan}
       />
-      <p>{result}</p>
+      <Popup prop={validate} onScan={() => setValidate("true")} />
     </Grid>
   );
 };
