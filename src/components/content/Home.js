@@ -6,8 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import  Card  from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import { CenterFocusStrong } from '@material-ui/icons';
+import { CenterFocusStrong, ContactPhoneOutlined } from '@material-ui/icons';
 
+import {app,db} from '../auth/base';
+
+const user = app.auth().currentUser;
 
 const useStyles = makeStyles({
     root: {
@@ -28,6 +31,12 @@ const useStyles = makeStyles({
     // },
   });
 
+
+const addCheckInToDB = (details) => {
+    console.log(details)
+    db.collection("checkedin").add(details);
+}
+
 export default function Scan (){
 
     const classes = useStyles();
@@ -36,9 +45,13 @@ export default function Scan (){
     const [delay, setDelay]=useState(100)
 
     const handleScan=(data)=>{ 
+        console.log(user.email);
         if (data){
-        setResult( data)
-        console.log(data)
+        const x = JSON.parse(data);
+        x.timeStamp = (new Date()).toISOString();
+        console.log(x);
+        //setResult( data)
+        //addCheckInToDB(x); //attach thus function to checkin button's event listener 
         }
     }
 
