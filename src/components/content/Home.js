@@ -5,6 +5,7 @@ import  AppBar  from "../layout/AppBar"
 import Sacnner from "../layout/Sacnner"
 import {app,db} from '../auth/base';
 import firebase from "firebase";
+import Popup from "../layout/popup"
 
 
 const addCheckInToDB = (details) => {
@@ -18,6 +19,7 @@ const Home = () => {
             <CssBaseline />
             <AppBar />
             <Sacnner />
+            <Popup />
         </React.Fragment>
     )
 }
