@@ -7,6 +7,8 @@ import  Card  from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { CenterFocusStrong } from '@material-ui/icons';
+import {app,db} from '../auth/base';
+import firebase from "firebase";
 
 
 const useStyles = makeStyles({
@@ -28,6 +30,12 @@ const useStyles = makeStyles({
     // },
   });
 
+
+const addCheckInToDB = (details) => {
+    console.log(details)
+    db.collection("checkedin").add(details);
+}
+
 export default function Scan (){
 
     const classes = useStyles();
@@ -37,8 +45,17 @@ export default function Scan (){
 
     const handleScan=(data)=>{ 
         if (data){
-        setResult( data)
-        console.log(data)
+            const user = firebase.auth().currentUser;
+            if(user){
+                console.log(user);
+                const x =  JSON.parse(data);
+                setResult( data)
+                x.email = user.email;
+                addCheckInToDB(x);
+            }
+            else{
+                console.log("cant find user");
+            }
         }
     }
 

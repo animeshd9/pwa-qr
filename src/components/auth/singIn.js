@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import app from './base.js';
+import {app} from './base.js';
 import { withRouter , Redirect } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
 // import { MemoryRouter as Router } from 'react-router';
