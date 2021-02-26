@@ -3,13 +3,7 @@ import "firebase/auth"
 import "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlCDJ3gI2iRPFoq_5euuP8aTDXC_f6FQc",
-  authDomain: "qr-attendance-6bf46.firebaseapp.com",
-  projectId: "qr-attendance-6bf46",
-  storageBucket: "qr-attendance-6bf46.appspot.com",
-  messagingSenderId: "634976301651",
-  appId: "1:634976301651:web:b965c1e1913384940a8ca6",
-  measurementId: "G-2RY1VNEB80"
+ 
   };
 
 
